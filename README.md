@@ -115,8 +115,7 @@ true
 ```
 
 El REPL también es útil para probar funciones y módulos. Puedes definir funciones y llamarlas en el mismo entorno:
-
-```
+```jsx
 > function greet(name) {
     console.log('Hello, ' + name + '!')
     }
@@ -129,7 +128,7 @@ undefined
 
 Para salir del REPL, puedes presionar las teclas **`Ctrl + C`** dos veces o escribir **`.exit`** y presionar Enter.
 
-![Untitled](Curso%20NodeJs%20y%20Express%2032e1fd3555bc4ae599268e873bba5489/Untitled.png)
+![Untitled](./images/Untitled.png)
 
 El REPL de Node.js es una herramienta muy útil para probar ideas rápidamente, depurar código o explorar características del lenguaje. Te permite interactuar con el código de forma inmediata sin necesidad de crear archivos o ejecutar un programa completo.
 </details>
@@ -157,7 +156,7 @@ Recuerda guardar los cambios en el archivo de JavaScript antes de ejecutarlo par
 
 Utilizando la terminal integrada en Visual Studio Code, puedes ejecutar archivos de JavaScript con Node.js sin tener que salir del editor. Esto te permite depurar y probar tu código directamente en el entorno de desarrollo.
 
-![Untitled](Curso%20NodeJs%20y%20Express%2032e1fd3555bc4ae599268e873bba5489/Untitled%201.png)
+![Untitled](./images/Untitled%201.png)
 </details>
 
 <details>
@@ -187,8 +186,7 @@ Para crear un módulo en Node.js, debes seguir los siguientes pasos:
 2. Abre el archivo **`miModulo.js`** en tu editor de código preferido.
 3. Define las funcionalidades que deseas incluir en el módulo. Por ejemplo, puedes declarar variables, funciones u objetos. Aquí hay un ejemplo básico de cómo podrías definir un módulo con una función de saludo:
 
-```
-javascriptCopy code
+```jsx
 // miModulo.js
 
 function saludar(nombre) {
@@ -207,8 +205,7 @@ En este ejemplo, el módulo **`miModulo`** tiene una función llamada **`saludar
 1. Guarda el archivo **`miModulo.js`**.
 2. Ahora puedes utilizar el módulo en otro archivo de JavaScript. Por ejemplo, crea un nuevo archivo llamado **`index.js`** y requiere el módulo **`miModulo`** utilizando la función **`require`**:
 
-```
-javascriptCopy code
+```jsx
 // index.js
 
 const miModulo = require('./miModulo');
@@ -284,7 +281,7 @@ Aquí, **`greetings.greeting('Samantha')`** llama a la función **`greeting`** e
 
 De manera similar, **`greetings.greetingHelloWorld()`** llama a la función **`greetingHelloWorld`** exportada desde el módulo **`greetings.js`**. Como esta función no toma ningún argumento, simplemente devuelve el saludo "Hello World!". Nuevamente, el resultado se imprime en la consola.
 
-![Untitled](Curso%20NodeJs%20y%20Express%2032e1fd3555bc4ae599268e873bba5489/Untitled%202.png)
+![Untitled](./images/Untitled%202.png)
 </details>
 
 <details>
@@ -295,8 +292,7 @@ En Node.js, puedes utilizar **`require`** para cargar módulos y la exportación
 
 1. **Exportación de módulos**:
 
-```
-javascriptCopy code
+```jsx
 // módulo.js
 const greeting = 'Hello';
 
@@ -312,8 +308,7 @@ En este ejemplo, estamos exportando la función **`sayHello`** desde el módulo 
 
 1. **Importación de módulos**:
 
-```
-javascriptCopy code
+```jsx
 const { sayHello } = require('./módulo.js');
 
 sayHello('John'); // Output: Hello, John!
@@ -444,8 +439,7 @@ En este ejemplo, estamos configurando un controlador de eventos para el evento *
 
 1. **process.stdout** y **process.stderr**: Representan los flujos de salida estándar (stdout) y error estándar (stderr), respectivamente. Puedes utilizarlos para mostrar mensajes y resultados en la consola.
 
-```
-javascriptCopy code
+```jsx
 process.stdout.write('Esto es un mensaje en stdout\n');
 // Output: Esto es un mensaje en stdout
 
@@ -469,32 +463,28 @@ Aquí tienes algunos aspectos clave del módulo **`os`**:
 
 1. **os.platform()**: Devuelve el nombre de la plataforma del sistema operativo en la que se está ejecutando Node.js, como **`"darwin"`** para macOS, **`"win32"`** para Windows, o **`"linux"`** para Linux.
 
-```
-javascriptCopy code
+```jsx
 console.log(os.platform()); // Output: 'darwin'
 
 ```
 
 1. **os.arch()**: Devuelve la arquitectura de la CPU del sistema, como **`"x64"`**, **`"arm"`**, **`"ia32"`**, etc.
 
-```
-javascriptCopy code
+```jsx
 console.log(os.arch()); // Output: 'x64'
 
 ```
 
 1. **os.hostname()**: Devuelve el nombre del host del sistema.
 
-```
-javascriptCopy code
+```jsx
 console.log(os.hostname()); // Output: 'mi-pc'
 
 ```
 
 1. **os.totalmem()** y **os.freemem()**: Devuelven la cantidad total de memoria del sistema y la cantidad de memoria libre, respectivamente, en bytes.
 
-```
-javascriptCopy code
+```jsx
 console.log(os.totalmem()); // Output: 8589934592 (8 GB)
 console.log(os.freemem()); // Output: 4294967296 (4 GB)
 
@@ -502,8 +492,7 @@ console.log(os.freemem()); // Output: 4294967296 (4 GB)
 
 1. **os.cpus()**: Devuelve un arreglo de objetos que representan la información de cada núcleo de la CPU del sistema.
 
-```
-javascriptCopy code
+```jsx
 console.log(os.cpus());
 // Output:
 // [
@@ -528,8 +517,7 @@ Aquí tienes algunos aspectos clave del módulo **`timers`**:
 
 1. **setTimeout()**: La función **`setTimeout()`** se utiliza para programar la ejecución de una función después de un cierto período de tiempo, expresado en milisegundos.
 
-```
-javascriptCopy code
+```jsx
 setTimeout(() => {
 console.log('¡Han pasado 2 segundos!');
 }, 2000);
@@ -540,8 +528,7 @@ En este ejemplo, la función **`console.log()`** se ejecutará después de 2 seg
 
 1. **setInterval()**: La función **`setInterval()`** se utiliza para repetir la ejecución de una función a intervalos regulares, expresados en milisegundos.
 
-```
-javascriptCopy code
+```jsx
 let counter = 0;
 
 const intervalId = setInterval(() => {
@@ -560,8 +547,7 @@ En este ejemplo, la función **`console.log()`** se ejecutará cada segundo. Des
 
 1. **setImmediate()**: La función **`setImmediate()`** se utiliza para programar la ejecución de una función en la siguiente iteración del bucle de eventos, después de que se hayan procesado los eventos actuales.
 
-```
-javascriptCopy code
+```jsx
 setImmediate(() => {
 console.log('¡Esto se ejecuta inmediatamente!');
 });
