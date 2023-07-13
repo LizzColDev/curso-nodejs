@@ -563,6 +563,7 @@ El módulo **`timers`** es útil cuando necesitas programar la ejecución de fun
 
 <details>
 <summary><b>Módulo fs</b></summary>
+    
 El módulo **`fs`** (File System) es un módulo integrado en Node.js que proporciona funcionalidades para interactuar con el sistema de archivos. Permite leer, escribir, modificar, borrar archivos y directorios, obtener información sobre archivos y directorios, entre otras operaciones relacionadas con el sistema de archivos.
 
 Aquí tienes algunos aspectos clave del módulo **`fs`**:
