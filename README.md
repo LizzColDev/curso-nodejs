@@ -729,5 +729,397 @@ myModule.saludar('Juan'); // Imprime: Hola, Juan!
 console.log(myModule.numero); // Imprime: 42
 ```
 </details>
+</details>
 
+<details>
+<summary><b>NPM</b></summary>
+
+<details>
+<summary><b>Qué es: </b></summary>
+
+**npm** es el administrador de paquetes predeterminado para Node.js. Se instala automáticamente junto con Node.js. npm es una herramienta que te permite descargar, instalar, actualizar y gestionar las dependencias de tu proyecto. Un paquete en npm es un módulo o biblioteca de JavaScript reutilizable que puedes utilizar en tu aplicación.
+
+Con npm, puedes buscar paquetes, instalar paquetes desde el registro de npm (un repositorio en línea que alberga miles de paquetes de código abierto), administrar las versiones de los paquetes, y más. Además, puedes crear y publicar tus propios paquetes para que otros desarrolladores puedan utilizarlos.
+
+El uso de npm te permite aprovechar la amplia variedad de paquetes y herramientas disponibles en el ecosistema de Node.js, lo que agiliza y simplifica el desarrollo de aplicaciones.
+
+</details>
+
+<details>
+<summary><b>node_modules</b></summary>
+La carpeta **`node_modules`** es un directorio creado automáticamente por npm al instalar paquetes en un proyecto de Node.js. Cuando utilizas npm para instalar paquetes en tu proyecto, npm descarga esos paquetes y los guarda en la carpeta **`node_modules`** de tu directorio de proyecto.
+
+Cada paquete instalado mediante npm tendrá su propia carpeta dentro de **`node_modules`**, con su nombre y versión específicos. Dentro de cada carpeta de paquete, se encuentran los archivos y dependencias necesarios para que ese paquete funcione correctamente.
+
+La estructura de la carpeta **`node_modules`** puede ser bastante compleja, especialmente si tu proyecto tiene muchas dependencias. Sin embargo, no es necesario que te preocupes por su contenido o su estructura en la mayoría de los casos.
+
+Cuando ejecutas tu aplicación Node.js, el entorno de ejecución busca automáticamente los módulos requeridos en la carpeta **`node_modules`**. No necesitas hacer referencia explícita a la carpeta **`node_modules`** en tu código, ya que Node.js sabe dónde buscar los módulos requeridos en función de la configuración del proyecto y los caminos de búsqueda establecidos.
+
+La carpeta **`node_modules`** se excluye generalmente de los sistemas de control de versiones (como Git) al publicar tu código fuente, ya que los paquetes pueden ser instalados nuevamente utilizando el archivo **`package.json`** y el comando **`npm install`**. Esto evita que la carpeta **`node_modules`** ocupe espacio innecesario en el repositorio y simplifica la distribución y colaboración del proyecto.
+</details>
+
+<details>
+<summary><b>Paquetes y dependencias</b></summary>
+En el contexto de Node.js y npm, los términos "paquetes" y "dependencias" están estrechamente relacionados y se refieren a los módulos o bibliotecas de código que se utilizan en una aplicación.
+
+**Paquetes**: En el ecosistema de Node.js, un paquete se refiere a un módulo o biblioteca de JavaScript reutilizable que se distribuye a través del registro de npm. Un paquete puede contener funcionalidades específicas, como funciones, clases, métodos y utilidades, que pueden ser utilizadas por otros desarrolladores en sus proyectos. Un paquete generalmente se publica con un nombre único y una versión específica.
+
+**Dependencias**: Las dependencias son paquetes o módulos externos en los que se basa una aplicación para funcionar correctamente. Cuando desarrollas una aplicación con Node.js, puedes utilizar diferentes paquetes de código abierto para agregar funcionalidades adicionales o simplificar ciertas tareas. Estos paquetes se especifican en el archivo **`package.json`** de tu proyecto y se instalan en la carpeta **`node_modules`** mediante el administrador de paquetes npm.
+</details>
+</details>
+
+<details>
+<summary><b>Crear paquete con NPM</b></summary>
+
+<details>
+<summary><b>npm init</b></summary>
+
+Aquí tienes una guía paso a paso para utilizar el comando **`npm init`** y crear un archivo **`package.json`** en tu proyecto:
+
+1. Abre tu línea de comandos o terminal y navega hasta la carpeta raíz de tu proyecto donde deseas crear el archivo **`package.json`**.
+2. Ejecuta el siguiente comando:
+
+```bash
+npm init
+
+```
+
+1. A continuación, se te guiará a través de un asistente interactivo que te solicitará información sobre tu proyecto. A continuación se muestra una lista de los campos comunes que se te pedirá que completes:
+- **name**: Ingresa el nombre de tu proyecto. El nombre debe ser único y no debe contener caracteres especiales ni espacios.
+- **version**: Ingresa la versión inicial de tu proyecto. Puedes usar el formato de versión semántica, como "1.0.0".
+- **description**: Proporciona una breve descripción de tu proyecto.
+- **entry point**: Especifica el archivo principal de tu proyecto, generalmente llamado **`index.js`**. Si estás creando una biblioteca o un módulo, puedes dejar este campo vacío.
+- **test command**: Si tienes configurado algún comando de prueba, puedes ingresarlo aquí. De lo contrario, puedes dejarlo en blanco.
+- **git repository**: Si tu proyecto está vinculado a un repositorio Git, puedes ingresar la URL de tu repositorio aquí. De lo contrario, puedes dejarlo en blanco.
+- **keywords**: Proporciona palabras clave que describan tu proyecto, separadas por espacios.
+- **author**: Ingresa tu nombre o el nombre del autor principal del proyecto.
+- **license**: Elige la licencia bajo la cual deseas distribuir tu proyecto. Puedes elegir entre las opciones comunes como "MIT", "ISC", "Apache-2.0", etc.
+- **Yes/No questions**: Se te harán preguntas adicionales, como si deseas incluir un archivo **`README.md`**, si deseas que tu proyecto esté configurado como privado, etc. Responde "Yes" o "No" según tus necesidades.
+2. Después de responder todas las preguntas, se generará el archivo **`package.json`** con la información proporcionada. Revisa cuidadosamente la información en el archivo y asegúrate de que sea correcta.
+
+¡Y eso es todo! Ahora tienes un archivo **`package.json`** generado en tu proyecto, el cual contiene la configuración básica de tu proyecto y puede ser utilizado para administrar las dependencias, scripts y otra información relevante.
+
+Recuerda que siempre puedes editar manualmente el archivo **`package.json`** si necesitas realizar cambios en la configuración de tu proyecto más adelante.
+</details>
+
+<details>
+<summary><b>JSON</b></summary>
+JSON (JavaScript Object Notation) es un formato de intercambio de datos ligero y legible por humanos. Se utiliza para transmitir y almacenar datos estructurados en una forma que es fácilmente comprensible tanto para los humanos como para las máquinas. JSON se basa en la sintaxis de los objetos literales de JavaScript, pero es un formato independiente del lenguaje.
+
+Aquí hay algunas características clave de JSON:
+
+1. **Estructura de datos**: JSON permite representar datos estructurados utilizando una combinación de objetos y arreglos. Los datos se organizan en pares clave-valor, donde las claves son cadenas y los valores pueden ser de diferentes tipos, como cadenas de texto, números, booleanos, objetos, arreglos o valores nulos.
+2. **Sintaxis sencilla**: La sintaxis de JSON es sencilla y fácil de leer y escribir. Los objetos se delimitan con llaves **`{}`**, los arreglos se delimitan con corchetes **`[]`**, y los pares clave-valor se separan con dos puntos **`:`**. Los elementos en un arreglo o en un objeto se separan con comas **`,`**.
+3. **Tipos de datos compatibles**: JSON admite varios tipos de datos comunes, incluyendo cadenas de texto, números, booleanos, objetos, arreglos y valores nulos. Los objetos JSON pueden contener propiedades con nombres únicos, mientras que los arreglos JSON contienen una secuencia ordenada de valores.
+4. **Compatibilidad con varios lenguajes**: JSON se ha convertido en un formato de datos ampliamente aceptado y es compatible con la mayoría de los lenguajes de programación. Esto significa que puedes generar, leer y analizar JSON en diferentes lenguajes sin problemas.
+5. **Interoperabilidad**: JSON es utilizado ampliamente en aplicaciones web y servicios web como un formato de intercambio de datos. Puedes enviar datos en formato JSON desde un servidor a un cliente, y viceversa, lo que permite una comunicación eficiente y consistente entre diferentes sistemas.
+
+Aquí tienes un ejemplo de cómo se ve un objeto JSON:
+
+```json
+
+{
+  "nombre": "Juan",
+  "edad": 30,
+  "ciudad": "México",
+  "hobbies": ["correr", "leer", "viajar"],
+  "activo": true,
+  "amigos": [
+    { "nombre": "María", "edad": 28 },
+    { "nombre": "Carlos", "edad": 32 }
+  ]
+}
+
+```
+
+En este ejemplo, tenemos un objeto JSON que representa información de una persona. El objeto tiene propiedades como "nombre", "edad", "ciudad", "hobbies" y "activo". Algunas propiedades contienen valores simples, como cadenas de texto y números, mientras que otras contienen arreglos y objetos anidados.
+
+JSON se utiliza ampliamente en el desarrollo de aplicaciones web y servicios web para el intercambio de datos entre diferentes sistemas. La mayoría de los lenguajes de programación proporcionan funciones y bibliotecas para trabajar con JSON, lo que facilita su manipulación y análisis.
+</details>
+
+<details>
+<summary><b>JSON.parse</b></summary>
+
+**`JSON.parse()`** es una función incorporada en JavaScript que se utiliza para analizar una cadena JSON y convertirla en un objeto JavaScript. Toma una cadena JSON válida como argumento y devuelve un objeto JavaScript que representa los datos contenidos en esa cadena.
+
+La sintaxis básica de **`JSON.parse()`** es la siguiente:
+
+```jsx
+JSON.parse(jsonString)
+
+```
+
+Donde **`jsonString`** es la cadena JSON que se desea analizar y convertir en un objeto JavaScript.
+
+Aquí hay un ejemplo de cómo utilizar **`JSON.parse()`**:
+
+```jsx
+const jsonString = '{"nombre": "Juan", "edad": 30, "ciudad": "México"}';
+const obj = JSON.parse(jsonString);
+console.log(obj.nombre); // Output: "Juan"
+console.log(obj.edad); // Output: 30
+console.log(obj.ciudad); // Output: "México"
+
+```
+
+En este ejemplo, **`jsonString`** es una cadena JSON que representa un objeto con propiedades como "nombre", "edad" y "ciudad". Al llamar a **`JSON.parse(jsonString)`**, se analiza la cadena JSON y se convierte en un objeto JavaScript. Luego, podemos acceder a las propiedades del objeto utilizando la notación de punto.
+
+Es importante tener en cuenta que la cadena JSON debe ser válida para que **`JSON.parse()`** funcione correctamente. Debe seguir la sintaxis y el formato adecuados de JSON. Si la cadena JSON no es válida, **`JSON.parse()`** lanzará una excepción de error.
+
+**`JSON.parse()`** también puede manejar cadenas JSON que contienen arreglos, objetos anidados y otros tipos de datos compatibles con JSON. Si la cadena JSON contiene arreglos, se convertirán en arreglos JavaScript correspondientes. Si contiene objetos anidados, se convertirán en objetos JavaScript anidados.
+
+</details>
+
+<details>
+<summary><b>JSON.stringify</b></summary>
+
+**`JSON.stringify()`** es una función incorporada en JavaScript que se utiliza para convertir un objeto JavaScript en una cadena JSON. Toma un objeto JavaScript como argumento y devuelve una representación JSON de ese objeto.
+
+La sintaxis básica de **`JSON.stringify()`** es la siguiente:
+
+```jsx
+JSON.stringify(objeto[, propiedades[, espaciado]])
+
+```
+
+Donde:
+
+- **`objeto`**: El objeto JavaScript que se desea convertir en una cadena JSON.
+- **`propiedades`** (opcional): Un array o una función que se utiliza para filtrar y seleccionar las propiedades que se incluirán en la cadena JSON resultante.
+- **`espaciado`** (opcional): Un valor numérico o una cadena que se utiliza para dar formato a la cadena JSON resultante con espacios y saltos de línea para hacerla más legible. Por ejemplo, puedes utilizar un valor numérico para especificar la cantidad de espacios en blanco que se deben usar para la indentación, o puedes utilizar una cadena como "\t" para usar tabulaciones en lugar de espacios.
+
+Aquí hay un ejemplo de cómo utilizar **`JSON.stringify()`**:
+
+```jsx
+const objeto = {
+  nombre: "Juan",
+  edad: 30,
+  ciudad: "México"
+};
+
+const jsonString = JSON.stringify(objeto);
+console.log(jsonString);
+// Output: '{"nombre":"Juan","edad":30,"ciudad":"México"}'
+
+```
+
+En este ejemplo, **`objeto`** es un objeto JavaScript que representa información de una persona. Al llamar a **`JSON.stringify(objeto)`**, el objeto se convierte en una cadena JSON válida. La cadena JSON resultante se imprime en la consola.
+
+Además de convertir objetos JavaScript en cadenas JSON, **`JSON.stringify()`** también puede manejar opciones adicionales como:
+
+- El uso del segundo argumento **`propiedades`** para filtrar las propiedades del objeto que se incluirán en la cadena JSON resultante. Esto permite una mayor flexibilidad en la selección de propiedades específicas para incluir o excluir.
+- El uso del tercer argumento **`espaciado`** para dar formato a la cadena JSON resultante con espacios y saltos de línea. Esto hace que la cadena JSON sea más legible para los humanos.
+</details>
+</details>
+
+
+<details>
+<summary><b>Instalar y Desinstalar paquetes con npm</b></summary>
+
+Para instalar y desinstalar paquetes con npm, sigue estos pasos:
+
+**Instalar paquetes:**
+
+1. Abre tu línea de comandos o terminal.
+2. Navega hasta la carpeta raíz de tu proyecto o al directorio donde deseas instalar el paquete.
+3. Ejecuta el siguiente comando para instalar un paquete específico:
+
+```bash
+npm install nombre-del-paquete
+
+```
+
+Reemplaza "nombre-del-paquete" por el nombre del paquete que deseas instalar. Por ejemplo, para instalar el paquete "lodash", usarías **`npm install lodash`**. También puedes especificar una versión específica agregando **`@`** seguido del número de versión, como **`npm install lodash@4.17.21`**.
+
+1. npm descargará e instalará el paquete junto con sus dependencias en la carpeta **`node_modules`** de tu proyecto. Puedes consultar el archivo **`package.json`** para ver la lista de dependencias instaladas y sus versiones.
+
+**Desinstalar paquetes:**
+
+1. Abre tu línea de comandos o terminal.
+2. Navega hasta la carpeta raíz de tu proyecto o al directorio donde se encuentra el paquete que deseas desinstalar.
+3. Ejecuta el siguiente comando para desinstalar un paquete específico:
+
+```bash
+npm uninstall nombre-del-paquete
+
+```
+
+Reemplaza "nombre-del-paquete" por el nombre del paquete que deseas desinstalar. Por ejemplo, para desinstalar el paquete "lodash", usarías **`npm uninstall lodash`**.
+
+1. npm eliminará el paquete y sus dependencias de la carpeta **`node_modules`** de tu proyecto.
+
+Es importante tener en cuenta que, al desinstalar un paquete, se eliminará solo la versión específica del paquete que estás desinstalando. Si otros paquetes en tu proyecto dependen de la misma versión, seguirán estando presentes en la carpeta **`node_modules`**.
+
+Además, es posible que desees agregar el flag **`--save`** o **`--save-dev`** al ejecutar **`npm install`** para guardar las dependencias en el archivo **`package.json`**. Por ejemplo:
+
+```bash
+npm install nombre-del-paquete --save
+
+```
+
+Esto agregará el paquete como una dependencia en la sección **`"dependencies"`** del archivo **`package.json`**. Si el paquete es una dependencia de desarrollo, puedes usar **`--save-dev`** en su lugar para agregarlo a la sección **`"devDependencies"`**.
+
+Recuerda que debes tener npm instalado en tu sistema para poder utilizar estos comandos. npm se instala automáticamente junto con Node.js.
+</details>
+
+<details>
+<summary><b>Package-lock.json</b></summary>
+El archivo **`package-lock.json`** es un archivo generado automáticamente por npm cuando se instalan paquetes en un proyecto. Este archivo almacena información detallada sobre las dependencias y las versiones específicas de los paquetes instalados en el proyecto.
+
+El propósito principal del archivo **`package-lock.json`** es garantizar la reproducibilidad de las instalaciones de paquetes. Contiene un registro de las versiones exactas de los paquetes que se han instalado, incluidas las versiones de sus dependencias directas e indirectas. Esto significa que cuando otro desarrollador o equipo trabaje en el proyecto y ejecute el comando **`npm install`**, npm utilizará la información del archivo **`package-lock.json`** para asegurarse de que las mismas versiones exactas de los paquetes se instalen en sus máquinas.
+
+El archivo **`package-lock.json`** también incluye información adicional, como los enlaces a los repositorios de los paquetes y los hashes de integridad para verificar la integridad de los paquetes descargados.
+
+Es importante incluir el archivo **`package-lock.json`** en el control de versiones de tu proyecto para garantizar la consistencia en el entorno de desarrollo. Esto significa que cuando compartas el proyecto con otros desarrolladores o lo implementes en diferentes entornos, se utilizarán las mismas versiones de paquetes.
+
+Además, cuando ejecutas el comando **`npm install`**, npm verifica si existe el archivo **`package-lock.json`** y lo utiliza para realizar instalaciones más rápidas y consistentes. Si no se encuentra el archivo **`package-lock.json`**, npm generará uno nuevo basado en las dependencias declaradas en el archivo **`package.json`**.
+</details>
+
+
+<details>
+<summary><b>Eventos en Node.js</b></summary>
+
+En Node.js, los eventos son una parte fundamental de su arquitectura basada en el modelo de programación asíncrona y orientada a eventos. El módulo principal que permite trabajar con eventos en Node.js es el módulo **`events`**, que proporciona una forma de emitir, escuchar y manejar eventos.
+
+Aquí hay una descripción general de cómo funcionan los eventos en Node.js:
+
+<details>
+<summary><b>Creación del objeto EventEmitter:</b></summary>
+El primer paso es crear una instancia de la clase **`EventEmitter`** del módulo **`events`**. Esta instancia actuará como el emisor de eventos.
+
+![Untitled](./images/Untitled%204.png)
+
+```jsx
+
+const EventEmitter = require('events');
+const miEmitter = new EventEmitter();
+
+```
+</details>
+
+<details>
+<summary><b>Registro de escuchadores de eventos: </b></summary>
+
+A continuación, puedes registrar escuchadores de eventos en el objeto **`EventEmitter`**. Un escuchador de eventos es una función que se ejecuta cuando un evento en particular es emitido por el emisor.
+
+```jsx
+miEmitter.on('evento', () => {
+  console.log('El evento fue emitido');
+});
+
+```
+
+En este ejemplo, hemos registrado un escuchador de eventos para el evento llamado **`'evento'`**. Cuando este evento se emita, la función de escuchador se ejecutará.
+</details>
+
+<details>
+<summary><b>Emisión de eventos: </b></summary>
+Para emitir un evento, utilizas el método **`emit()`** en el objeto **`EventEmitter`**. Puedes pasar datos adicionales como argumentos al método **`emit()`** que serán pasados a los escuchadores de eventos.
+
+```jsx
+miEmitter.emit('evento');
+
+```
+
+Al ejecutar este código, el evento llamado **`'evento'`** se emitirá y el escuchador asociado a ese evento se ejecutará, imprimiendo **`"El evento fue emitido"`** en la consola.
+</details>
+
+<details>
+<summary><b>Manejo de eventos con una vez: </b></summary>
+Además de **`on()`**, puedes usar el método **`once()`** para registrar un escuchador de eventos que solo se ejecutará una vez.
+
+```jsx
+miEmitter.once('eventoUnico', () => {
+  console.log('Este evento se ejecutará solo una vez');
+});
+
+```
+
+En este caso, el escuchador de eventos asociado al evento **`'eventoUnico'`** solo se ejecutará la primera vez que se emita el evento. Si el evento se emite nuevamente, el escuchador no se ejecutará.
+</details>
+
+<details>
+<summary><b>Pasando argumentos a los escuchadores de eventos: </b></summary>
+Puedes pasar argumentos adicionales al emitir un evento y acceder a ellos en los escuchadores de eventos.
+
+```jsx
+miEmitter.on('mensaje', (mensaje) => {
+  console.log('Mensaje recibido:', mensaje);
+});
+
+miEmitter.emit('mensaje', 'Hola, mundo!');
+
+```
+
+En este ejemplo, el evento **`'mensaje'`** se emite con el argumento **`'Hola, mundo!'`**. El escuchador de eventos asociado a ese evento imprimirá **`"Mensaje recibido: Hola, mundo!"`** en la consola.
+</details>
+</details>
+
+<details>
+<summary><b>Promesas en JavaScript</b></summary>
+Las promesas en JavaScript son un concepto fundamental en programación asincrónica y se utilizan para manejar operaciones que toman tiempo, como llamadas a API, operaciones de red o lectura/escritura de archivos, de una manera más fácil y legible.
+
+En términos sencillos, una promesa es un objeto que representa el resultado pendiente de una operación asincrónica. Puede tener uno de los siguientes estados:
+
+1. **Pendiente**: La promesa está en espera de que se resuelva o se rechace.
+2. **Cumplida**: La operación asincrónica se ha completado exitosamente y se ha obtenido un resultado.
+3. **Rechazada**: La operación asincrónica ha fallado y se ha obtenido un motivo de rechazo (un error).
+
+Aquí tienes un ejemplo básico de cómo se ve una promesa en JavaScript:
+
+```jsx
+const miPromesa = new Promise((resolve, reject) => {
+  // Aquí se realiza la operación asincrónica
+
+  // Si la operación es exitosa, llamamos a 'resolve' con el resultado
+  resolve('¡La operación se completó correctamente!');
+
+  // Si la operación falla, llamamos a 'reject' con el motivo del rechazo
+  // reject('Ocurrió un error en la operación');
+});
+
+// Manejamos el resultado de la promesa usando 'then' y 'catch'
+miPromesa.then((resultado) => {
+  console.log(resultado); // Imprime el resultado si la promesa se cumple
+}).catch((error) => {
+  console.log(error); // Imprime el motivo del rechazo si la promesa es rechazada
+});
+
+```
+
+En este ejemplo, creamos una promesa llamada **`miPromesa`** que representa una operación asincrónica. Dentro de la función que recibe como argumento, realizamos la operación y llamamos a la función **`resolve()`** si la operación es exitosa o a la función **`reject()`** si la operación falla.
+
+Luego, utilizamos los métodos **`then()`** y **`catch()`** para manejar el resultado de la promesa. Si la promesa se cumple (es decir, se resuelve), el código dentro de **`then()`** se ejecutará y tendremos acceso al resultado. Si la promesa es rechazada, el código dentro de **`catch()`** se ejecutará y tendremos acceso al motivo del rechazo.
+
+El uso de promesas permite estructurar de manera más clara y ordenada el código asincrónico, evitando el anidamiento excesivo de callbacks y mejorando la legibilidad del código. Además, las promesas proporcionan métodos adicionales, como **`finally()`** para ejecutar código independientemente del resultado de la promesa, y permiten encadenar múltiples operaciones asincrónicas utilizando **`then()`**.
+</details>
+
+<details>
+<summary><b>async / await</b></summary>
+
+**`async/await`** es una característica introducida en JavaScript ES2017 (también conocido como ES8) que proporciona una forma más concisa y legible de trabajar con promesas. Permite escribir código asincrónico como si fuera síncrono, sin anidamiento excesivo de callbacks o uso de métodos **`then()`** y **`catch()`**.
+
+Aquí tienes un ejemplo básico de cómo se utiliza **`async/await`**:
+
+```jsx
+async function miFuncionAsincrona() {
+  try {
+    const resultado = await promesa; // La promesa se resuelve y se obtiene el resultado
+    console.log(resultado); // Se trabaja con el resultado como si fuera síncrono
+  } catch (error) {
+    console.log(error); // Se maneja el error si la promesa es rechazada
+  }
+}
+
+```
+
+En este ejemplo, definimos una función **`miFuncionAsincrona`** con la palabra clave **`async`**. Dentro de la función, utilizamos la palabra clave **`await`** seguida de una promesa. Esto pausa la ejecución de la función hasta que la promesa se resuelva o se rechace. Una vez que la promesa se resuelve, el resultado se asigna a la variable **`resultado`** y se puede trabajar con él como si fuera un valor síncrono. Si la promesa es rechazada, el código dentro del bloque **`catch`** se ejecutará y se manejará el error.
+
+Es importante tener en cuenta que **`await`** solo se puede usar dentro de una función **`async`**. Además, el uso de **`await`** solo está permitido en contextos asincrónicos, como dentro de funciones que devuelven promesas o dentro de otras funciones **`async`**. Esto permite un flujo de control más claro y legible en el código asincrónico.
+
+La ventaja de utilizar **`async/await`** es que simplifica la escritura y comprensión de código asincrónico al eliminar la necesidad de encadenar múltiples llamadas de **`then()`** y manejar errores con **`catch()`**. En su lugar, puedes escribir código más secuencial y estructurado, similar a un código síncrono tradicional.
+
+Recuerda que, aunque **`async/await`** facilita el manejo de promesas, aún estás trabajando con operaciones asincrónicas. Las funciones **`async`** siempre devuelven una promesa, y si una promesa dentro de un bloque **`async`** es rechazada sin ser manejada, la promesa devuelta por la función **`async`** también será rechazada.
+
+En resumen, **`async/await`** es una característica de JavaScript que proporciona una forma más concisa y legible de trabajar con promesas. Permite escribir código asincrónico como si fuera síncrono, utilizando la palabra clave **`await`** para pausar la ejecución y esperar la resolución de una promesa. Esto simplifica el flujo de control y mejora la legibilidad del código asincrónico.
 </details>
