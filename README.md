@@ -560,6 +560,143 @@ Estas son solo algunas de las funcionalidades proporcionadas por el módulo **`t
 
 El módulo **`timers`** es útil cuando necesitas programar la ejecución de funciones en un momento futuro o realizar tareas repetitivas en intervalos regulares en tu aplicación Node.js.
 </details>
+
+<details>
+<summary><b>Módulo fs</b></summary>
+El módulo **`fs`** (File System) es un módulo integrado en Node.js que proporciona funcionalidades para interactuar con el sistema de archivos. Permite leer, escribir, modificar, borrar archivos y directorios, obtener información sobre archivos y directorios, entre otras operaciones relacionadas con el sistema de archivos.
+
+Aquí tienes algunos aspectos clave del módulo **`fs`**:
+1. **Lectura de archivos**:
+- **`fs.readFile()`**: Lee el contenido de un archivo de forma asíncrona.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js</title>
+</head>
+<body>
+    <h1>Curso Node.js</h1> 
+        <p>Estoy aprendiendo Node.js</p>
+</body>
+</html>
+```
+
+```jsx
+const fs = require('fs')
+
+fs.readFile('./index.html', 'utf-8', (err, contenido)=>{
+if(err) {
+throw err;
+}else{
+console.log(contenido);
+}
+});
+```
+
+![Untitled](./images/Untitled%203.png)
+
+- **`fs.readFileSync()`**: Lee el contenido de un archivo de forma sincrónica.
+
+```jsx
+
+// Lectura de archivo de forma asíncrona
+fs.readFile('archivo.txt', 'utf8', (error, data) => {
+if (error) {
+console.error('Error al leer el archivo:', error);
+} else {
+console.log('Contenido del archivo:', data);
+}
+});
+
+// Lectura de archivo de forma sincrónica
+try {
+const data = fs.readFileSync('archivo.txt', 'utf8');
+console.log('Contenido del archivo:', data);
+} catch (error) {
+console.error('Error al leer el archivo:', error);
+}
+
+```
+
+2. **Escritura de archivos**:
+- **`fs.writeFile()`**: Escribe datos en un archivo de forma asíncrona.
+- **`fs.writeFileSync()`**: Escribe datos en un archivo de forma sincrónica.
+
+```jsx
+javascriptCopy code
+// Escritura de archivo de forma asíncrona
+const data = 'Este es el contenido a escribir en el archivo';
+fs.writeFile('archivo.txt', data, 'utf8', (error) => {
+if (error) {
+console.error('Error al escribir en el archivo:', error);
+} else {
+console.log('Archivo escrito correctamente');
+}
+});
+
+// Escritura de archivo de forma sincrónica
+const data = 'Este es el contenido a escribir en el archivo';
+try {
+fs.writeFileSync('archivo.txt', data, 'utf8');
+console.log('Archivo escrito correctamente');
+} catch (error) {
+console.error('Error al escribir en el archivo:', error);
+}
+```
+
+3. **Manipulación de archivos y directorios**:
+- **`fs.rename()`**: Cambia el nombre de un archivo o mueve un archivo a otra ubicación.
+- **`fs.unlink()`**: Elimina un archivo.
+- **`fs.mkdir()`**: Crea un directorio.
+- **`fs.readdir()`**: Lee los contenidos de un directorio.
+
+```jsx
+// Renombrar un archivo
+fs.rename('antiguo.txt', 'nuevo.txt', (error) => {
+if (error) {
+console.error('Error al renombrar el archivo:', error);
+} else {
+console.log('Archivo renombrado correctamente');
+}
+});
+
+// Eliminar un archivo
+fs.unlink('archivo.txt', (error) => {
+if (error) {
+console.error('Error al eliminar el archivo:', error);
+} else {
+console.log('Archivo eliminado correctamente');
+}
+});
+
+// Crear un directorio
+fs.mkdir('directorio', (error) => {
+if (error) {
+console.error('Error al crear el directorio:', error);
+} else {
+console.log('Directorio creado correctamente');
+}
+});
+
+// Leer los contenidos de un directorio
+fs.readdir('directorio', (error, files) => {
+if (error) {
+console.error('Error al leer el directorio:', error);
+} else {
+console.log('Contenidos del directorio:', files);
+}
+});
+
+```
+
+Estos son solo algunos ejemplos de las funcionalidades proporcionadas por el módulo **`fs`**. También puedes utilizar **`fs.stat()`** para obtener información sobre un archivo o directorio, **`fs.rmdir()`** para eliminar un directorio, **`fs.copyFile()`** para copiar un archivo, entre otras operaciones relacionadas con el sistema de archivos.
+
+El módulo **`fs`** es una parte esencial de Node.js para trabajar con el sistema de archivos.
+</details>
+
 </details>
 <details>
 <summary><b>Módulos externos (third-party modules)</b></summary>
@@ -575,7 +712,7 @@ Además de requerir módulos, Node.js también permite exportar código desde un
 ```jsx
 // Exportar una función
 exports.saludar = function(nombre) {
-    console.log('Hola, ' + nombre + '!');
+console.log('Hola, ' + nombre + '!');
 };
 
 // Exportar una variable
