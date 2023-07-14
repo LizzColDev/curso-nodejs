@@ -1123,3 +1123,334 @@ Recuerda que, aunque **`async/await`** facilita el manejo de promesas, aún est�
 
 En resumen, **`async/await`** es una característica de JavaScript que proporciona una forma más concisa y legible de trabajar con promesas. Permite escribir código asincrónico como si fuera síncrono, utilizando la palabra clave **`await`** para pausar la ejecución y esperar la resolución de una promesa. Esto simplifica el flujo de control y mejora la legibilidad del código asincrónico.
 </details>
+
+
+<details>
+<summary><b>Modelo Cliente-Servidor</b></summary>
+El modelo Cliente-Servidor es una arquitectura de red y un paradigma de comunicación entre sistemas en el cual hay dos roles principales: el cliente y el servidor.
+
+En este modelo, el cliente y el servidor son entidades independientes que se comunican entre sí a través de una red, como Internet. Cada uno tiene responsabilidades y roles específicos:
+
+1. **Cliente**: El cliente es el software o la aplicación que solicita y consume recursos o servicios proporcionados por el servidor. Puede ser una aplicación de escritorio, una aplicación móvil o incluso un navegador web. El cliente envía solicitudes al servidor y espera recibir las respuestas correspondientes.
+2. **Servidor**: El servidor es el software o la aplicación que proporciona recursos o servicios al cliente. Tiene la capacidad de recibir solicitudes del cliente, procesarlas y enviar las respuestas correspondientes. El servidor puede ser una computadora física dedicada, un servidor en la nube o cualquier dispositivo capaz de manejar solicitudes y ofrecer servicios.
+
+La comunicación entre el cliente y el servidor se basa en un protocolo de red, como HTTP (Protocolo de Transferencia de Hipertexto), que define cómo se intercambian los datos entre el cliente y el servidor.
+
+En un escenario típico, el flujo de comunicación puede ser el siguiente:
+
+1. El cliente envía una solicitud al servidor a través de una conexión de red. La solicitud puede contener información como la URL, los parámetros, los datos del formulario o cualquier otro dato relevante para la operación deseada.
+2. El servidor recibe la solicitud del cliente y procesa la solicitud según el tipo de servicio solicitado. Esto puede incluir realizar operaciones en una base de datos, ejecutar una lógica de negocio o acceder a otros recursos.
+3. Una vez que el servidor ha procesado la solicitud, genera una respuesta que contiene los datos solicitados o el resultado de la operación solicitada.
+4. El servidor envía la respuesta de vuelta al cliente a través de la conexión de red establecida previamente.
+5. El cliente recibe la respuesta del servidor y puede procesarla según sea necesario. Esto puede incluir mostrar la información en una interfaz de usuario, almacenar los datos recibidos o realizar acciones adicionales en función de la respuesta.
+
+Este flujo de comunicación se repite cada vez que el cliente envía una solicitud al servidor y espera una respuesta correspondiente.
+
+El modelo Cliente-Servidor se utiliza ampliamente en aplicaciones y sistemas distribuidos en Internet. Permite una distribución eficiente de la carga de trabajo y una separación clara de responsabilidades entre el cliente y el servidor, lo que facilita el desarrollo, el mantenimiento y la escalabilidad de los sistemas.
+</details>
+
+<details>
+<summary><b>Solicitudes HTTP</b></summary>
+
+Las solicitudes HTTP (Hypertext Transfer Protocol) son un componente fundamental en la comunicación cliente-servidor en la web. Con HTTP, los clientes pueden enviar solicitudes al servidor y recibir respuestas que contienen datos, recursos o información solicitada.
+
+Las solicitudes HTTP están compuestas por varios elementos importantes:
+
+1. **Verbo HTTP**: Especifica el tipo de acción que se desea realizar en el servidor. Algunos de los verbos más comunes son:
+    - GET: Solicita un recurso específico del servidor.
+    - POST: Envía datos al servidor para ser procesados (como enviar un formulario en línea).
+    - PUT: Actualiza un recurso existente en el servidor.
+    - DELETE: Elimina un recurso existente en el servidor.
+    - PATCH: Realiza una modificación parcial de un recurso existente en el servidor.
+2. **URL (Uniform Resource Locator)**: Es la dirección del recurso que se desea obtener, modificar o eliminar en el servidor. La URL consta de varios componentes, como el protocolo (HTTP), el dominio (nombre del servidor) y la ruta específica del recurso en el servidor.
+3. **Encabezados (Headers)**: Son metadatos adicionales que se incluyen en la solicitud para proporcionar información adicional al servidor o al cliente. Los encabezados pueden contener información sobre el tipo de contenido que se envía, las preferencias del cliente, la autenticación, el idioma, la codificación, etc.
+4. **Cuerpo de la solicitud (Request body)**: Opcionalmente, algunas solicitudes pueden incluir un cuerpo que contiene datos adicionales que se envían al servidor. Esto se utiliza principalmente en solicitudes POST, PUT o PATCH, donde se envían datos para ser procesados por el servidor.
+
+Una vez que se envía la solicitud HTTP al servidor, este la procesa y devuelve una respuesta correspondiente. Las respuestas HTTP contienen información sobre el estado de la solicitud, así como los datos o recursos solicitados.
+
+Las respuestas HTTP también están compuestas por varios elementos importantes, como el código de estado HTTP (como 200 OK para una respuesta exitosa), los encabezados de respuesta y el cuerpo de la respuesta (que puede contener datos o recursos solicitados).
+
+En resumen, las solicitudes HTTP son la base de la comunicación entre clientes y servidores en la web. Los clientes envían solicitudes al servidor especificando el verbo HTTP, la URL, los encabezados y, opcionalmente, el cuerpo de la solicitud. El servidor procesa la solicitud y devuelve una respuesta que contiene el código de estado, los encabezados y el cuerpo de la respuesta. Esto permite la transferencia de datos, recursos y la interacción entre los clientes y los servidores en la web.
+</details>
+
+<details>
+<summary><b>Métodos HTTP</b></summary>
+
+Los métodos HTTP (Hypertext Transfer Protocol) son verbos o acciones que se utilizan en las solicitudes para indicar el tipo de operación que se debe realizar en un recurso específico. Estos métodos definen la intención del cliente al interactuar con el servidor y son parte integral del protocolo HTTP. Aquí tienes una descripción de los métodos HTTP más comunes:
+
+1. **GET**: El método GET se utiliza para solicitar y obtener un recurso específico del servidor. Esta solicitud no modifica ningún dato en el servidor y solo recupera información.
+2. **POST**: El método POST se utiliza para enviar datos al servidor y crear un nuevo recurso en el servidor. Por ejemplo, se utiliza para enviar datos de formularios o cargar archivos al servidor.
+3. **PUT**: El método PUT se utiliza para actualizar o reemplazar completamente un recurso existente en el servidor. Se envía el recurso completo al servidor para su actualización.
+4. **PATCH**: El método PATCH se utiliza para realizar una modificación parcial de un recurso existente en el servidor. En lugar de enviar el recurso completo, solo se envían los cambios o actualizaciones necesarios.
+5. **DELETE**: El método DELETE se utiliza para eliminar un recurso específico del servidor.
+6. **HEAD**: El método HEAD es similar a GET, pero solicita solo los encabezados de respuesta, sin recuperar el cuerpo del recurso. Se utiliza para obtener información sobre un recurso sin descargar todo el contenido.
+7. **OPTIONS**: El método OPTIONS se utiliza para obtener información sobre las opciones y capacidades de comunicación disponibles para un recurso específico en el servidor. Esto puede incluir los métodos HTTP admitidos, los encabezados permitidos, etc.
+
+Estos son algunos de los métodos HTTP más utilizados, pero existen otros menos comunes, como TRACE, CONNECT, etc., que tienen usos más especializados.
+
+Es importante tener en cuenta que cada método HTTP tiene un propósito específico y está diseñado para realizar operaciones particulares en los recursos del servidor. Al enviar una solicitud HTTP, debes elegir el método adecuado según la intención y el resultado esperado de la operación en el servidor.
+</details>
+
+<details>
+<summary><b>Respuestas HTTP</b></summary>
+
+Las respuestas HTTP (Hypertext Transfer Protocol) son enviadas por el servidor en respuesta a una solicitud realizada por el cliente. Las respuestas contienen información sobre el estado de la solicitud, así como los datos o recursos solicitados. Aquí tienes una descripción de los componentes principales de una respuesta HTTP:
+
+1. **Código de estado HTTP**: Es un número de tres dígitos que indica el estado de la solicitud. Los códigos de estado más comunes incluyen:
+    - 200 OK: Indica que la solicitud fue exitosa y se envía el contenido solicitado en el cuerpo de la respuesta.
+    - 404 Not Found: Indica que el recurso solicitado no se encontró en el servidor.
+    - 500 Internal Server Error: Indica un error interno del servidor al procesar la solicitud.
+    - 301 Moved Permanently: Indica que el recurso solicitado se ha movido permanentemente a una nueva ubicación.
+2. **Encabezados de respuesta**: Son metadatos adicionales que se envían junto con la respuesta para proporcionar información adicional al cliente o al servidor. Los encabezados pueden incluir información sobre el tipo de contenido, la codificación, la fecha y hora de la respuesta, entre otros datos.
+3. **Cuerpo de la respuesta**: Es el contenido de la respuesta, que puede ser el recurso solicitado, datos adicionales o información relevante. El cuerpo de la respuesta puede contener HTML, texto plano, JSON, imágenes u otros formatos, dependiendo del tipo de contenido solicitado y proporcionado por el servidor.
+
+La respuesta HTTP se envía desde el servidor al cliente a través de la conexión de red establecida previamente. El cliente recibe la respuesta y puede procesarla según sea necesario. Esto puede incluir mostrar el contenido en una interfaz de usuario, extraer datos del cuerpo de la respuesta o tomar acciones adicionales basadas en los encabezados y el código de estado recibidos.
+
+Es importante tener en cuenta que una solicitud puede tener diferentes tipos de respuestas dependiendo de diversos factores, como la validez de la solicitud, la disponibilidad del recurso y las configuraciones del servidor. Las respuestas HTTP proporcionan información crucial para el cliente y permiten una comunicación efectiva entre el cliente y el servidor en la web.
+</details>
+
+<details>
+<summary><b>Códigos de estado HTTP</b></summary>
+
+Los códigos de estado HTTP (Hypertext Transfer Protocol) son números de tres dígitos que indican el resultado de una solicitud HTTP realizada por el cliente. Estos códigos proporcionan información sobre el estado de la solicitud y ayudan a identificar cualquier problema o éxito en la comunicación entre el cliente y el servidor. Aquí tienes algunos ejemplos de códigos de estado HTTP comunes:
+
+1. **1xx: Respuestas informativas**
+    - 100 Continue: Indica que el servidor ha recibido los encabezados iniciales de la solicitud y está esperando que el cliente envíe el resto de la solicitud.
+    - 101 Switching Protocols: Indica que el servidor está cambiando el protocolo utilizado en la conexión.
+2. **2xx: Respuestas exitosas**
+    - 200 OK: Indica que la solicitud ha sido exitosa y se devuelve el contenido solicitado.
+    - 201 Created: Indica que la solicitud ha sido exitosa y se ha creado un nuevo recurso.
+    - 204 No Content: Indica que la solicitud ha sido exitosa, pero no hay contenido para devolver en la respuesta.
+3. **3xx: Redirecciones**
+    - 301 Moved Permanently: Indica que el recurso solicitado se ha movido permanentemente a una nueva ubicación.
+    - 302 Found: Indica que el recurso solicitado se ha encontrado, pero se ha movido temporalmente a una nueva ubicación.
+    - 304 Not Modified: Indica que el recurso solicitado no ha sido modificado desde la última solicitud y se puede utilizar la copia en caché.
+4. **4xx: Errores del cliente**
+    - 400 Bad Request: Indica que la solicitud del cliente es incorrecta o no se puede procesar.
+    - 404 Not Found: Indica que el recurso solicitado no se ha encontrado en el servidor.
+    - 403 Forbidden: Indica que el servidor rechaza la solicitud del cliente debido a permisos insuficientes.
+5. **5xx: Errores del servidor**
+    - 500 Internal Server Error: Indica un error interno en el servidor al procesar la solicitud.
+    - 502 Bad Gateway: Indica que el servidor actuando como puerta de enlace recibió una respuesta no válida del servidor ascendente.
+    - 503 Service Unavailable: Indica que el servidor no está disponible actualmente para manejar la solicitud debido a una sobrecarga o mantenimiento.
+
+Estos son solo algunos ejemplos de los códigos de estado HTTP más comunes. Hay muchos otros códigos de estado que se utilizan para diversos propósitos y situaciones. Los códigos de estado HTTP son útiles para diagnosticar y solucionar problemas en la comunicación entre clientes y servidores, ya que proporcionan información sobre el resultado de la solicitud.
+</details>
+
+<details>
+<summary><b>Primer servidor HTTP</b></summary>
+
+Aquí tienes un ejemplo básico de cómo crear un servidor HTTP utilizando el módulo **`http`** en Node.js:
+
+```jsx
+const http = require('http');
+
+// Crear un servidor HTTP
+const server = http.createServer((req, res) => {
+  // Configurar encabezados de respuesta
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+
+  // Enviar la respuesta al cliente
+  res.end('¡Hola, mundo!');
+});
+
+// Escuchar en un puerto específico
+const port = 3000;
+server.listen(port, () => {
+  console.log(`El servidor está escuchando en el puerto ${port}`);
+});
+
+```
+
+En este ejemplo, creamos un servidor HTTP utilizando la función **`http.createServer()`**. Dentro del callback, configuramos los encabezados de respuesta utilizando **`res.writeHead()`** y enviamos la respuesta al cliente utilizando **`res.end()`**. En este caso, simplemente enviamos el texto "¡Hola, mundo!" como respuesta.
+
+Luego, especificamos el puerto en el que queremos que el servidor escuche llamando al método **`listen()`** en el objeto del servidor. En este ejemplo, el servidor está configurado para escuchar en el puerto 3000.
+
+Una vez que hayas guardado el código en un archivo, como **`server.js`**, puedes ejecutarlo desde la línea de comandos utilizando el comando **`node server.js`**. Esto iniciará el servidor y podrás acceder a él en tu navegador ingresando **`http://localhost:3000`**.
+
+Al acceder a **`http://localhost:3000`**, verás la respuesta "¡Hola, mundo!" que envía el servidor.
+</details>
+
+<details>
+<summary><b>req / res</b></summary>
+
+En un servidor HTTP, **`req`** y **`res`** son dos objetos que representan la solicitud entrante (request) y la respuesta saliente (response) respectivamente.
+
+- **`req`** (Request): El objeto **`req`** representa la solicitud entrante del cliente al servidor. Contiene información sobre la solicitud, como la URL, los encabezados, los parámetros de consulta y cualquier cuerpo de solicitud enviado por el cliente. Permite acceder a estos datos y utilizarlos para procesar la solicitud.
+- **`res`** (Response): El objeto **`res`** representa la respuesta saliente que el servidor enviará al cliente en respuesta a la solicitud. Permite configurar y enviar la respuesta al cliente. Puedes establecer los encabezados de respuesta, el código de estado HTTP y el cuerpo de la respuesta utilizando métodos y propiedades proporcionados por el objeto **`res`**.
+
+Aquí tienes algunos ejemplos de cómo utilizar **`req`** y **`res`** en un servidor HTTP:
+
+```jsx
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  // Acceder a la URL de la solicitud
+  console.log(req.url);
+
+  // Acceder a los encabezados de la solicitud
+  console.log(req.headers);
+
+  // Acceder a los parámetros de consulta (query parameters)
+  const queryParams = new URLSearchParams(req.url.slice(1));
+  console.log(queryParams.get('id'));
+
+  // Configurar encabezados de respuesta
+  res.setHeader('Content-Type', 'text/plain');
+
+  // Enviar una respuesta con código de estado 200 y un cuerpo de respuesta
+  res.statusCode = 200;
+  res.end('¡Respuesta enviada!');
+});
+
+server.listen(3000, () => {
+  console.log('El servidor está escuchando en el puerto 3000');
+});
+
+```
+
+En este ejemplo, estamos utilizando **`req`** y **`res`** en el callback que se pasa a **`createServer()`**. Accedemos a la URL de la solicitud a través de **`req.url`**, los encabezados de la solicitud a través de **`req.headers`** y los parámetros de consulta utilizando el módulo **`URLSearchParams`**.
+
+Para la respuesta, configuramos los encabezados de respuesta utilizando **`res.setHeader()`**, establecemos el código de estado HTTP con **`res.statusCode`** y enviamos el cuerpo de respuesta utilizando **`res.end()`**.
+
+Estos son solo algunos ejemplos de cómo se pueden utilizar **`req`** y **`res`** en un servidor HTTP. Ambos objetos proporcionan una serie de métodos y propiedades para interactuar con las solicitudes y respuestas, lo que te permite procesar y enviar datos entre el cliente y el servidor de manera eficiente.
+</details>
+
+<details>
+<summary><b>Estructura de una URL</b></summary>
+
+Una URL (Uniform Resource Locator) es una cadena de caracteres que se utiliza para identificar y localizar recursos en la web. La estructura de una URL consta de varios componentes que definen la ubicación y la forma de acceder al recurso deseado. Aquí está la estructura general de una URL:
+
+```bash
+
+protocolo://dominio:puerto/ruta?parámetros#fragmento
+
+```
+
+A continuación, se explica cada componente de una URL:
+
+1. **Protocolo**: Especifica el protocolo de comunicación utilizado para acceder al recurso. Algunos ejemplos comunes son **`http://`** para el protocolo HTTP y **`https://`** para el protocolo HTTPS.
+2. **Dominio**: Es el nombre de dominio del servidor que aloja el recurso. Puede ser una dirección IP o un nombre de dominio legible por humanos, como **`www.ejemplo.com`**.
+3. **Puerto** (opcional): Especifica el puerto en el servidor al que se realizará la solicitud. Si no se especifica, se utiliza el puerto predeterminado para el protocolo, como el puerto 80 para HTTP y el puerto 443 para HTTPS.
+4. **Ruta**: Es la ubicación específica del recurso dentro del servidor. Indica la ruta de acceso relativa al dominio donde se encuentra el recurso. Por ejemplo, **`/productos/televisor`** representa la ruta del recurso "televisor" dentro del directorio "productos" en el servidor.
+5. **Parámetros** (opcional): Se utilizan para enviar datos adicionales en la URL. Los parámetros se agregan después de la ruta y se separan con el símbolo de interrogación **`?`**. Cada parámetro se compone de un nombre y un valor separados por el símbolo de igual **`=`**, y múltiples parámetros se separan con el símbolo de ampersand **`&`**. Por ejemplo, **`?id=123&nombre=producto`**.
+6. **Fragmento** (opcional): Especifica una ubicación específica dentro del recurso. Se indica con el símbolo de numeral **`#`**. Los fragmentos son comúnmente utilizados en páginas web para navegar directamente a una sección específica de la página.
+
+Aquí tienes un ejemplo de una URL completa:
+
+```
+bashCopy code
+https://www.ejemplo.com:8080/productos/televisor?id=123&nombre=producto#seccion2
+
+```
+
+En este ejemplo, el protocolo es **`https://`**, el dominio es **`www.ejemplo.com`**, el puerto es **`8080`**, la ruta es **`/productos/televisor`**, los parámetros son **`id=123&nombre=producto`** y el fragmento es **`seccion2`**.
+
+La estructura de una URL puede variar dependiendo del contexto y el tipo de recurso que se esté accediendo. Es importante comprender la estructura para poder trabajar con URLs de manera efectiva en el desarrollo web.
+</details>
+
+<details>
+<summary><b>Módulo url</b></summary>
+
+El módulo **`url`** en Node.js es un módulo incorporado que proporciona utilidades para trabajar con URLs. Permite analizar y manipular componentes individuales de una URL, así como construir y formatear URLs.
+
+Para utilizar el módulo **`url`**, primero debes importarlo en tu archivo de JavaScript:
+
+```jsx
+
+const url = require('url');
+
+```
+
+A continuación, puedes utilizar las funciones y propiedades proporcionadas por el módulo **`url`**. Aquí tienes algunos ejemplos de cómo puedes utilizarlo:
+
+1. **Analizar una URL**:
+Puedes utilizar la función **`url.parse()`** para analizar una URL y obtener sus componentes individuales, como el protocolo, el dominio, la ruta, los parámetros, etc. Por ejemplo:
+    
+    ```jsx
+    
+    const parsedUrl = url.parse('https://www.example.com/products?category=electronics', true);
+    console.log(parsedUrl.protocol); // 'https:'
+    console.log(parsedUrl.hostname); // 'www.example.com'
+    console.log(parsedUrl.pathname); // '/products'
+    console.log(parsedUrl.searchParams); // { category: 'electronics' }
+    
+    ```
+    
+2. **Construir una URL**:
+Puedes utilizar la función **`url.format()`** para construir una URL a partir de sus componentes individuales. Por ejemplo:
+    
+    ```jsx
+    
+    const constructedUrl = url.format({
+      protocol: 'https:',
+      hostname: 'www.example.com',
+      pathname: '/products',
+      query: { category: 'electronics' },
+    });
+    console.log(constructedUrl); // 'https://www.example.com/products?category=electronics'
+    
+    ```
+    
+3. **Normalizar una URL**:
+Puedes utilizar la función **`url.resolve()`** para normalizar una URL resolviendo cualquier relativo que pueda contener. Por ejemplo:
+    
+    ```jsx
+    
+    const baseUrl = 'https://www.example.com';
+    const relativePath = '/products/123';
+    const resolvedUrl = url.resolve(baseUrl, relativePath);
+    console.log(resolvedUrl); // 'https://www.example.com/products/123'
+    
+    ```
+    
+
+Estos son solo algunos ejemplos de cómo puedes utilizar el módulo **`url`** en Node.js. El módulo **`url`** proporciona varias otras funciones y propiedades útiles para trabajar con URLs, como **`url.parse()`** y **`url.format()`**. Consulta la documentación oficial de Node.js para obtener más información sobre el módulo **`url`** y sus funcionalidades.
+</details>
+
+<details>
+<summary><b>Routing en Node.js</b></summary>
+
+El enrutamiento (routing) en Node.js se refiere al proceso de determinar cómo responder a una solicitud HTTP en función de la ruta y el método de la solicitud. Es una parte fundamental de la creación de aplicaciones web en Node.js, ya que permite definir diferentes acciones o controladores según la URL y el verbo HTTP utilizados.
+
+Existen varias bibliotecas y marcos de trabajo en Node.js que facilitan el enrutamiento, como Express.js, Koa.js, Hapi.js, entre otros. Estas bibliotecas proporcionan funcionalidades para definir rutas y manejar solicitudes HTTP de manera fácil y eficiente.
+
+Aquí tienes un ejemplo básico de enrutamiento utilizando el marco de trabajo Express.js:
+
+```jsx
+
+const express = require('express');
+const app = express();
+
+// Definir una ruta GET
+app.get('/', (req, res) => {
+  res.send('¡Hola, mundo!');
+});
+
+// Definir una ruta POST
+app.post('/productos', (req, res) => {
+  res.send('Producto creado');
+});
+
+// Definir una ruta dinámica
+app.get('/usuarios/:id', (req, res) => {
+  const userId = req.params.id;
+  res.send(`Usuario ${userId}`);
+});
+
+// Escuchar en un puerto específico
+app.listen(3000, () => {
+  console.log('El servidor está escuchando en el puerto 3000');
+});
+
+```
+
+En este ejemplo, estamos utilizando Express.js para definir diferentes rutas y manejar las solicitudes correspondientes. Utilizamos **`app.get()`** para definir una ruta GET para la URL raíz ("/"), **`app.post()`** para definir una ruta POST para "/productos" y **`app.get()`** para definir una ruta dinámica para "/usuarios/:id", donde ":id" es un parámetro dinámico.
+
+Dentro de las funciones de controlador, utilizamos **`req`** y **`res`** para acceder a la solicitud entrante y enviar la respuesta correspondiente. Por ejemplo, **`req.params`** nos permite acceder a los parámetros dinámicos en una ruta.
+
+El enrutamiento permite definir una lógica específica para diferentes rutas y métodos HTTP en una aplicación web. Puedes manejar la autenticación, la validación de datos, el acceso a bases de datos y otras operaciones según las necesidades de tu aplicación.
+
+Recuerda que el enrutamiento puede ser mucho más complejo dependiendo de la aplicación y los requisitos específicos. Las bibliotecas y marcos de trabajo como Express.js brindan una amplia gama de funcionalidades adicionales para facilitar la gestión de rutas y solicitudes HTTP en Node.js.
+</details>
+
