@@ -1454,3 +1454,31 @@ El enrutamiento permite definir una lógica específica para diferentes rutas y 
 Recuerda que el enrutamiento puede ser mucho más complejo dependiendo de la aplicación y los requisitos específicos. Las bibliotecas y marcos de trabajo como Express.js brindan una amplia gama de funcionalidades adicionales para facilitar la gestión de rutas y solicitudes HTTP en Node.js.
 </details>
 
+<details>
+<summary><b>Nodemon</b></summary>
+    
+Nodemon es una herramienta muy útil en el desarrollo de aplicaciones Node.js. Es un paquete de Node.js que supervisa los cambios en los archivos de tu proyecto y automáticamente reinicia el servidor cuando se detectan cambios, lo que te permite ahorrar tiempo y mejorar tu flujo de desarrollo.
+
+Cuando estás desarrollando una aplicación Node.js, normalmente tienes que reiniciar manualmente el servidor cada vez que realizas cambios en tus archivos de código. Esto puede ser tedioso y consumir tiempo, especialmente cuando tienes que reiniciar el servidor con frecuencia durante el desarrollo.
+
+Nodemon soluciona este problema al supervisar los archivos de tu proyecto y reiniciar automáticamente el servidor cuando detecta cambios. Esto te permite ahorrar tiempo y evitar la necesidad de reiniciar manualmente el servidor después de cada cambio.
+
+Para utilizar Nodemon, primero debes instalarlo globalmente o como una dependencia de desarrollo en tu proyecto. Puedes instalar Nodemon ejecutando el siguiente comando en tu línea de comandos:
+
+```bash
+npm install -g nodemon
+
+```
+
+Una vez que Nodemon está instalado, puedes utilizarlo para ejecutar tu archivo de entrada (por ejemplo, **`app.js`**) en lugar de usar el comando **`node`**. En lugar de ejecutar **`node app.js`**, ejecuta:
+
+```bash
+nodemon app.js
+
+```
+
+Cuando Nodemon esté en ejecución, supervisará los archivos de tu proyecto y, si se detectan cambios, reiniciará automáticamente el servidor. Esto te permite realizar cambios en tu código y ver los resultados sin tener que reiniciar manualmente el servidor.
+
+Nodemon también proporciona opciones adicionales que puedes utilizar, como ignorar ciertos archivos o directorios, retrasar la reiniciación del servidor después de los cambios y más. Puedes consultar la documentación oficial de Nodemon para obtener más información sobre cómo utilizar estas opciones.
+
+</details>
